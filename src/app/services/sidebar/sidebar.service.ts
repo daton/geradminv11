@@ -7,8 +7,8 @@ menu:any=[
     titulo:'Principal',
     icono:'mdi mdi-gauge',
     submenu:[
-      {titulo:'Dashboard', url:'/dashboard'},
-      {titulo:'ProgressBar', url:'/progress'},
+      {titulo:'Inicio', url:'/dashboard'},
+      {titulo:'Andamios', url:'/progress'},
       {titulo:'Gráficas', url:'/graficas1'},
     ]
   }
