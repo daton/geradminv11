@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 
@@ -18,19 +19,23 @@ import { GraficoDonaComponent } from './components/grafico-dona/grafico-dona.com
 import { ServiceModule } from './services/service.module';
 import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
+import {MatRadioModule} from '@angular/material';
 
+import 'hammerjs';
+import { DxDataGridModule } from 'devextreme-angular';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
-
-   
+    RegisterComponent,
+  
   ],
-  imports: [BrowserModule, AppRoutes, PagesModule, FormsModule, ServiceModule ,  HttpModule,
-    HttpClientModule],
+  imports: [BrowserModule,BrowserAnimationsModule, AppRoutes,PagesModule, FormsModule, ServiceModule ,  HttpModule,
+    HttpClientModule, MatRadioModule, DxDataGridModule],
+    exports:[MatRadioModule],
   providers: [],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule {}

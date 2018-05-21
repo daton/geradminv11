@@ -1,3 +1,123 @@
-<p>
-el dashborardsito
-</p>
+<!-- SI ES UN PROFESOR-->
+<h3>Bienvenido!!</h3>
+<div *ngIf="esProfesor">
+   <div class="row">
+        <div class="col-lg-3 col-md-6"  *ngFor="let materia of profesor.materias">
+                <!-- Otro color es el white-->
+                <div class="card bg-inverse">
+                    <div class="card-body">
+                        <i class="fa fa-vcard-o fa-2x"></i>
+                        <p>GEER </p>
+                        <h3>Eje 
+                            <span class="font-bold">{{materia.campo}}</span>
+                            <br>{{materia.nombre}}</h3>
+                        <div>
+                            <button  (click)="irAGrupo(materia.nombre)"  class="btn btn-info justify-content-start waves-effect waves-light m-t-15">Ver Grupo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+   </div>
+</div>
+<!-- TERMINA SI ES PROFESOR-->
+
+
+<!--SI ES UN ALUMNO  -->
+<div *ngIf="esAlumno">
+    <div class="row">
+        <!-- col -->
+        <div class="col-lg-3 col-md-6">
+            <!-- Otro color es el white-->
+            <div class="card bg-inverse">
+                <div class="card-body">
+                    <i class="fa fa-vcard-o fa-2x"></i>
+                    <p>GEER
+                        <span *ngIf="estaExamenDiagnosticoRealizado">Exámen completado</span>
+                    </p>
+                    <h3>Examen de
+                        <span class="font-bold">{{examenesMateriaNombre}}</span>
+                        <br>Diagnóstico</h3>
+                    <div>
+                        <button (click)="irAExamen(0)" [disabled]="estaExamenDiagnosticoRealizado" class="btn btn-info justify-content-start waves-effect waves-light m-t-15">Realizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- col -->
+        <div class="col-lg-3 col-md-6">
+            <!-- Otro color es el white-->
+            <div class="card bg-inverse">
+                <div class="card-body">
+                    <i class="fa fa-vcard-o fa-2x"></i>
+                    <p>GEER
+                        <span *ngIf="estaExamenInfo2InternetB2Realizado">Exámen completado</span>
+                    </p>
+                    <h3>Examen de
+                        <span class="font-bold">{{examenesMateriaNombre}}</span>
+                        <br>Internet bloque 2</h3>
+                    <div>
+                        <button (click)="irAExamen(1)" [disabled]="estaExamenInfo2InternetB2Realizado" class="btn btn-info justify-content-start waves-effect waves-light m-t-15">Realizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- col -->
+        <div class="col-lg-3 col-md-6">
+            <!-- Otro color es el white-->
+            <div class="card bg-inverse">
+                <div class="card-body">
+                    <i class="fa fa-vcard-o fa-2x"></i>
+                    <p>GEER
+                        <span *ngIf="estaExamenInfo2WordB2Realizado">Exámen completado</span>
+                    </p>
+                    <h3>Examen de
+                        <span class="font-bold">{{examenesMateriaNombre}}</span>
+                        <br>Word bloque 2</h3>
+                    <div>
+                        <button (click)="irAExamen(2)" [disabled]="estaExamenInfo2WordB2Realizado" class="btn btn-info justify-content-start waves-effect waves-light m-t-15">Realizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- col -->
+        <div class="col-lg-3 col-md-6">
+            <!-- Otro color es el white-->
+            <div class="card bg-inverse">
+                <div class="card-body">
+                    <i class="fa fa-vcard-o fa-2x"></i>
+                    <p>GEER
+                        <span *ngIf="estaExamenInfo2ExcelB2Realizado">Exámen completado</span>
+                    </p>
+                    <h3>Examen de
+                        <span class="font-bold">{{examenesMateriaNombre}}</span>
+                        <br>Excel bloque 2</h3>
+                    <div>
+                        <button (click)="irAExamen(3)" [disabled]="estaExamenInfo2ExcelB2Realizado" class="btn btn-info justify-content-start waves-effect waves-light m-t-15">Realizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- col -->
+    </div>
+    <!--Termina la primera fila-->
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <!-- Otro color es el white-->
+            <div class="card bg-inverse">
+                <div class="card-body">
+                    <i class="fa fa-vcard-o fa-2x"></i>
+                    <p>GEER
+                        <span *ngIf="estaExamenInfo2PowerB2Realizado">Exámen completado</span>
+                    </p>
+                    <h3>Examen de
+                        <span class="font-bold">{{examenesMateriaNombre}}</span>
+                        <br>Power Point bloque 2</h3>
+                    <div>
+                        <button (click)="irAExamen(4)" [disabled]="estaExamenInfo2PowerB2Realizado" class="btn btn-info justify-content-start waves-effect waves-light m-t-15">Realizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
